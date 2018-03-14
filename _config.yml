@@ -7,9 +7,9 @@ title: mon-super-site
 # Short description (displayed in the header)
 description: pour tester les pages de github
 
-Xshow_downloads: ["true" or "false" to indicate whether to provide a download URL]
+Xshow_downloads: "true" or "false" to indicate whether to provide a download URL
 
-Xgoogle_analytics: [Your Google Analytics tracking ID]
+Xgoogle_analytics: Google Analytics tracking ID
 
 Xgithub:
   zip_url: http://example.com/download.zip
