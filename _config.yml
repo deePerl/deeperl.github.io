@@ -1,12 +1,16 @@
+docu: https://jekyllrb.com/docs/variables/
 theXme: jekyll-theme-cayman
 
 # Name of the site (displayed in the header)
-name: mon-super-site
+title: mon-super-site
 
 # Short description (displayed in the header)
 description: pour tester les pages de github
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars1.githubusercontent.com/u/12160504
+Xshow_downloads: ["true" or "false" to indicate whether to provide a download URL]
 
-# https://github.com/barryclark/jekyll-now/blob/master/_config.yml
+Xgoogle_analytics: [Your Google Analytics tracking ID]
+
+Xgithub:
+  zip_url: http://example.com/download.zip
+  another_url: another value
