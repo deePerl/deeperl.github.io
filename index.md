@@ -6,7 +6,7 @@ description: Bla bla. Bla.
 
 # Hello home!
 
-## leve 2
+## level 2
 * option 1
 * option 2
   + sub option 2.1 
@@ -20,9 +20,14 @@ description: Bla bla. Bla.
   
     press `enter` to continue
     
-  ```
+  ```C
   for (int i=0; i<10; i++){
     prinf("%d\n", i);
   }
   ```
+  
+  > a little quotre from me.
+  > 
+  > sdfsdf sd f ssf ssdf  ff
+   
 -------------
