@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ site.locale }}">
-  
+<html lang="{lang="{{ site.lang | default: "en-US" }}">
+<head>
+  {% seo %}
   {% include head.html %}
-
-  <body>
-    start here:
-    
-    {% include page-header.html %}
-
-    <section class="main-content">
-      
-      {{ content }}
-
-      {% include page-footer.html %}
-
-    </section>
-
-  </body>
+</head>
+<body>
+  {% include page-header.html %}
+  <section class="main-content">
+    {{ content }}
+    {% include page-footer.html %}
+  </section>
+  {% include google-analytics.html %}
+</body>
 </html>
