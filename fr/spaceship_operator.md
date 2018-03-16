@@ -20,7 +20,7 @@ Exemple:
 >
 > `a != b` donne le même résultat que `(a <=> b) != 0`
 >
->	etc…
+>	etc...
 
 Appliqué aux chaines ça donne:
 
@@ -28,7 +28,7 @@ Appliqué aux chaines ça donne:
 >
 > `a ne b` donne le même résultat que `(a cmp b) != 0`
 >
->	etc…
+>	etc...
 
 C’est sympa, mais comme sur les deux types de base (nombres et chaines) on a déja les opérateurs ce n'est pas vraiment utile.
 
