@@ -7,6 +7,6 @@ Perl 6 pointe sérieusement le bout de son nez alors je vais prendre une retrait
 
 J’ai passé les 25 dernières années dans ce qui est devenu l’un de ces mastodontes de l’Internet dont le réseau IP couvre la planète. C'est à dire 25 ans d’utilisation de Perl dans un contexte où tout doit fonctionner à l’échelle de la planète sans aucune interruption.
 
-Le but est d'avoir le site en Francais et en Anglais, et ouvert aux discussions.
+Le but est d'avoir le site en [Francais](/fr/ "Page d'acceuil") et en [Anglais](/en/ "Home page"), et ouvert aux discussions.
 
 JF.
