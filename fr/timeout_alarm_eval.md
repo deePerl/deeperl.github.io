@@ -1,12 +1,13 @@
 # Timeout: alarm eval et die
 Nous allons voir comment traiter **correctement** et de **manière générale** le problème de timeout d’une fonction.
 
-Le premier intérêt de ce qui suit est didactique car deux livres notoires ont publiés des solutions fausses à ce problème.
--	La première fois en 1997 dans « Advanced Perl programming ». [5.6 Using Eval for Time-Outs]
--	La deuxième fois en 1998 dans « Perl Cookbook ». [16.21. Timing Out an Opération]
-- La presque bonne version ne viendra qu’en 2003 avec la seconde édition de « Perl Cookbook ».
+Le premier intérêt de ce qui suit est didactique car deux livres notoires ont toujours publiés des solutions fausses à ce problème.
+- La première fois en 1997 dans « Advanced Perl programming ». [5.6 Using Eval for Time-Outs]
+- La deuxième fois en 1998 dans « Perl Cookbook ». [16.21. Timing Out an Opération]
+- La troisième mauvaise version sera présentée en 2003 dans la seconde édition de « Perl Cookbook ».
+Quand on parcourt stackoverflow on voit encore des developpeurs batailler avec ces versions erronées.
 
-Le deuxième intérêt, plus pratique, est que la solution qui sera proposée ici est généraliste et permet de mettre sous contrôle d’un timeout n’importe quelle fonction sans avoir à la modifier (ce qui est très pratique si la dite fonction est dans un module que vous ne métrisez pas).
+Le deuxième intérêt, plus pratique, est que la solution qui sera proposée ici est correcte et générale. Elle permet de mettre sous contrôle d’un timeout _(presque)_ n’importe quelle fonction sans avoir à la modifier (ce qui est très pratique si la dite fonction est dans un module que vous ne maitrisez pas).
 
 ## Principes
 L’idée de base est la suivante :
@@ -17,7 +18,7 @@ L’idée de base est la suivante :
 
 Mais comme toujours avec les signaux les pièges sont dans les détails, et les développeurs les plus réputés se sont fait piéger...
 
-## Première implémentation (publiée mais fausse)
+## Première implémentation (fausse)
 
 _Advanced Perl Programming (First Edition, August 1997) - 5.6 Using Eval for Time-Outs_
 
@@ -38,7 +39,7 @@ sub timed_out {
 }
 ```
 
-## Deuxième implémentation (presque juste)
+## Deuxième implémentation (encore fausse)
 
 _Perl Cookbook (**First** Edition, August 1998) - 16.21. Timing Out an Operation_
 
@@ -72,7 +73,7 @@ par exemple pendant le test `if ($@ =~ /timeout/)` et l’exécution du die arr�
 
 ## Troisième implémentation (toujours fausse)
 
-_Perl Cookbook (**Second** Edition, August 1998) - 16.21. Timing Out an Operation_
+_Perl Cookbook (**Second** Edition, August 2003) - 16.21. Timing Out an Operation_
 
 ``` perl{.line-numbers}
 eval {
@@ -92,7 +93,7 @@ Ici on a une tentative plus pro (mais toujours fausse)
 -	`SIG{ALRM}` est localisé
 -	Le premier `eval` sert à se protéger du cas où on sort du deuxieme eval suite à un `die` autre que celui de l’alarme, et donc avec l’alarme toujours active, et que cette alarme s’exécute entre la sortie du deuxieme block `eval` et le premier `alarm 0`.
 
-Le **gros** problème c’est quen résolvant un probleme un autre a était introduit. Dans l’immense majorité des cas on sortira du premier eval normalement et donc `$@` sera une chaine vide et on aura ainsi perdu la cause de la sortie du deuxième `eval`.
+Le **gros** problème c’est qu'en résolvant un problème un autre a était introduit. Dans l’immense majorité des cas on sortira du premier `eval` normalement et donc `$@` sera une chaine vide et on aura ainsi perdu la cause de la sortie du deuxième `eval`.
 
 Enfin, le deuxième `alarm 0` est superflue car on ne peut pas sortir du premier `eval` avec l’alarme active.
 
