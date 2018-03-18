@@ -11,7 +11,7 @@ Dans cette seconde partie je vous propose une version correcte et générale de 
 ```Perl
 01 sub runWithTimeout {
 02   my $func    = shift;
-03   my $timeout = shift || 60;
+03   my $timeout = shift // 60;
 04   my $result;
 05
 06   eval {
