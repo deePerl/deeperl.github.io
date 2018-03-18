@@ -60,10 +60,12 @@ if ($@) {
     }
 }
 ```
-En voyant cette deuxième version on comprend où est la préoccupation : 
-que se passe-t-il si la longue l’opération exécute un `die` ? 
-Et bien on sort du `eval` avant la fin du timeout et donc avec toujours l’alarme active.
-Il faut donc désactiver cette alarme avec `alarm(0)`.
+En voyant cette deuxième version on comprend où est la préoccupation !
+
+> Que se passe-t-il si la longue l’opération exécute un `die` ? 
+
+Et bien on sort du `eval` avant la fin du timeout et donc avec l’alarme toujours active.
+Il faut donc la désactiver avec `alarm(0)`.
 
 Mais la solution est incomplète car l’alarme peut se déclencher à tout moment, 
 par exemple pendant le test `if ($@ =~ /timeout/)` et l’exécution du die arrête le programme.
@@ -88,9 +90,9 @@ die if $@ && $@ !~ /alarm clock restart/; # reraise
 ```
 Ici on a une tentative plus pro (mais toujours fausse)
 -	`SIG{ALRM}` est localisé
--	Le premier `eval` sert à se protéger du cas où on sort du deuxieme eval suite à un `die` autre que celui due à l’alarme et donc avec l’alarme active et que cette alarme s’exécute entre la sortie du deuxieme block `eval` et le premier `alarm 0`.
+-	Le premier `eval` sert à se protéger du cas où on sort du deuxieme eval suite à un `die` autre que celui de l’alarme, et donc avec l’alarme toujours active, et que cette alarme s’exécute entre la sortie du deuxieme block `eval` et le premier `alarm 0`.
 
-Le **gros** problème c’est que dans l’immense majorité des cas on sortira du premier eval normalement et que `$@` sera une chaine vide et on aura perdu la cause de la sortie du deuxième `eval`.
+Le **gros** problème c’est quen résolvant un probleme un autre a était introduit. Dans l’immense majorité des cas on sortira du premier eval normalement et donc `$@` sera une chaine vide et on aura ainsi perdu la cause de la sortie du deuxième `eval`.
 
 Enfin, le deuxième `alarm 0` est superflue car on ne peut pas sortir du premier `eval` avec l’alarme active.
 
