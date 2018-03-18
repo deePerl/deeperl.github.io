@@ -1,11 +1,10 @@
 # Timeout: alarm eval die
-Comment traiter **correctement** et de **manière générale** le problème de timeout d’une fonction.
 
-Dans la première partie nous avons vu un historique des versions publiées, mais fausses, dans des livres de références sur Perl.
+Comment traiter **correctement** et de **manière générale** le problème de timeout d’une fonction ?
 
-Dans cette seconde partie je vous propose une version correcte et générale de traiter ai meiux ce problème du timeout d'une fonction.
+Dans la première partie nous avons vu un historique de solutions publiées dans des livres de références sur Perl, mais fausses !
 
-
+Dans cette seconde partie je vous propose une version correcte et générale de traiter au mieux ce problème du timeout d'une fonction.
 
 ## Implémentation correcte et générale
 
