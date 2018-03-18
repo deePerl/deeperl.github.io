@@ -88,4 +88,11 @@ Dans cette seconde partie je vous propose une version correcte et générale de 
 
 ## ATTENTION !
 
+A partir du moment où $func s’est terminé tout a été mis en œuvre dans runWithTimout() pour éviter les problèmes. Mais de nombreux autres problèmes peuvent apparaitre pendant l’exécution de $func. Le principal problème est quand $func a fait son travail mais que l’alarme se déclenche avant que la fonction ai pu retourner à runWithTimout().
+
+Imaginez par exemple que $func effectue une transaction bancaire. Tout se passe bien et la dernier chose que $fun fait est d’inscrire dans la base de données que la commande du client peut être envoyée. Mais le timeout arrive pendant cette dernière étape, et la base n’est pas mise à jour. Le client sera débité mais pas livré !
+
+Les solutions à ce problème épineux sont hors de propos, mais ne croyez pas que la fonction runWithTimeout() résout tous les problèmes. Elle le fait à son niveau, c'est deja pas mal ! A vous de l'utiliser intelligemment et à bon escient. 
+
+JF
 
