@@ -1,13 +1,13 @@
 # Timeout: alarm eval et die
 Nous allons voir comment traiter **correctement** et de **manière générale** le problème de timeout d’une fonction.
 
-Le premier intérêt de ce qui suit est didactique car deux livres notoires ont toujours publiés des solutions fausses à ce problème.
+La premier partie de ce qui suit est didactique car deux livres majeurs dans le monde Perl ont toujours publiés des solutions fausses à ce problème.
 - La première fois en 1997 dans « Advanced Perl programming ». [5.6 Using Eval for Time-Outs]
 - La deuxième fois en 1998 dans « Perl Cookbook ». [16.21. Timing Out an Opération]
-- La troisième mauvaise version sera présentée en 2003 dans la seconde édition de « Perl Cookbook ».
+- Une troisième mauvaise version sera présentée en 2003 dans la seconde édition de « Perl Cookbook ».
 Quand on parcourt stackoverflow on voit encore des developpeurs batailler avec ces versions erronées.
 
-Le deuxième intérêt, plus pratique, est que la solution qui sera proposée ici est correcte et générale. Elle permet de mettre sous contrôle d’un timeout _(presque)_ n’importe quelle fonction sans avoir à la modifier (ce qui est très pratique si la dite fonction est dans un module que vous ne maitrisez pas).
+La [deuxième partie](/fr/timeout_alarm_eval_die_wrong "Timeout ok"), plus pratique, présente une solution correcte et générale. Elle permet de mettre sous contrôle d’un timeout _(presque)_ n’importe quelle fonction sans avoir à la modifier (ce qui est très pratique si la dite fonction est dans un module que vous ne maitrisez pas).
 
 ## Principes
 L’idée de base est la suivante :
@@ -98,4 +98,4 @@ Le **gros** problème c’est qu'en résolvant un problème un autre a était in
 Enfin, le deuxième `alarm 0` est superflue car on ne peut pas sortir du premier `eval` avec l’alarme active.
 
 ## Mon implémentation (juste et générale)
-voir ici...
+Voir la [deuxième partie](/fr/timeout_alarm_eval_die_wrong "Timeout ok")...
