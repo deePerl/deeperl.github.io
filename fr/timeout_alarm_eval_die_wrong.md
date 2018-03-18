@@ -1,7 +1,7 @@
 # Timeout: alarm eval et die
 Nous allons voir comment traiter **correctement** et de **manière générale** le problème de timeout d’une fonction.
 
-La premier partie de ce qui suit est didactique car deux livres majeurs dans le monde Perl ont toujours publiés des solutions fausses à ce problème.
+Cette premiere partie est avant tout historique car elle présente comment deux livres majeurs dans le monde Perl ont toujours publiés des solutions fausses à ce problème.
 - La première fois en 1997 dans « Advanced Perl programming ». [5.6 Using Eval for Time-Outs]
 - La deuxième fois en 1998 dans « Perl Cookbook ». [16.21. Timing Out an Opération]
 - Une troisième mauvaise version sera présentée en 2003 dans la seconde édition de « Perl Cookbook ».
