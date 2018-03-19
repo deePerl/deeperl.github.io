@@ -4,7 +4,7 @@ Comment traiter **correctement** et de **manière générale** le problème de t
 
 Dans la [première partie](/fr/timeout_alarm_eval_die_wrong "Timeout") nous avons vu un historique de solutions publiées dans des livres de références sur Perl, mais fausses !
 
-Dans cette seconde partie je vous propose une version correcte et générale de traiter au mieux ce problème du timeout d'une fonction.
+Dans cette seconde partie je vous propose une version correcte et générale pour traiter au mieux ce problème du timeout d'une fonction.
 
 ## Implémentation correcte et générale
 
