@@ -49,7 +49,7 @@ sub dumpit {
 
   `my $a = dumpit(\%annuaire);`
 
-* Dans sa version 2,3,6 ... 2n parametres il affiche le dump de l'objet
+* Dans sa version 2,4,6 ... 2n parametres il affiche le dump de l'objet
  
   `dumpit('Contacts' => \%annuaire);`  # on peut utiliser une virgule à la place de =>
 
