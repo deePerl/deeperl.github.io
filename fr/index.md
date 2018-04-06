@@ -7,13 +7,13 @@ En travaux... / Work in progress...
   * [slurpFile()](./slurpFile): Une seule fonction pour charger de deux manières différentes un fichier en mémoire.
 
 ## Concepts
-  * map-sort-map (Schwartzian Transform)
-  * l'operateur spaceship <=>
+  * [map-sort-map](./map-sort-map) (Schwartzian Transform)
+  * l'operateur [spaceship: <=>](./spaceship_operator)
 
 ## Cas pratiques
-  * timeout faux (*Quand les cadors de Perl publient des solutions fausses pendant des années*)
-  * timeout ok  
-  * tri des OID (Schwartzian Transform vs Guttman-Rosler Transform)
+  * [timeout faux](./timeout_alarm_eval_die_wrong) (*Quand les cadors de Perl publient des solutions fausses pendant des années*)
+  * [timeout ok](./timeout_alarm_eval_die_ok)
+  * [tri des OID](./sort-oid) (Schwartzian Transform vs Guttman-Rosler Transform)
 
 ## Outils
   * CPAN. 
