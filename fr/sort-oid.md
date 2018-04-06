@@ -1,5 +1,5 @@
 # ST vs GRT
-Nous avons vue la technique « Schwartzian Transform » (ST)  voici la technique « Guttman-Rosler Transform », ou GRT pour les intimes. (Messieurs Guttman et Rosler devaient être jaloux que Monsieur Schwart ai son nom associé à une technique plus vielle que lui, ils ont donc fait une variante ...) 
+Nous avons vue la technique « [Schwartzian Transform](./map-sort-map) » (ST)  voici la technique « Guttman-Rosler Transform », ou GRT pour les intimes. (Messieurs Guttman et Rosler devaient être jaloux que Monsieur Schwart ai son nom associé à une technique plus vielle que lui, ils ont donc fait une variante ...) 
 
 Cette variante est simple: GRT c’est comme ST mais le ```sort``` n’a pas de bloc de code. 
 
