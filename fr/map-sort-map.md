@@ -6,15 +6,15 @@ Des centaines de livres et des dizaines de milliers d’articles ont été écri
 Quand je vous le dit qu'il y a un culte de la personne...
 
 # Le problème
-On a une liste d’objets (de structures) que l’on veut trier. Mais l’information sur laquelle le critère de tri doit s’appliquer n’est pas explicite (il faut la calculer). Autrement dit ce n’est pas un entier ou une chaine de caractères deja présent dans les structures à trier.
+On a une liste d’objets que l’on veut trier. Mais l'information sur laquelle le critère de tri doit s’appliquer n’est pas explicite, il faut la calculer. Autrement dit ce n’est pas un entier ou une chaine de caractères deja présent dans les objets à trier.
 
-Par exemple trier des adresses ip d’après l’AS (Autonomous System) auquel elles appartiennent et le pays où elle sont allouées.
+Par exemple trier des adresses ip d’après l’AS (Autonomous System) auquel elles appartiennent et le pays où elles sont allouées.
 
 # Solution naïve
 ```Perl
 @resultat = sort { computeKey($a) cmp computeKey($b) } @liste; # cmp ou <=> suivant le type de computeKey()
 ```
-Chaque fois que l‘algorithme de tri devra comparer deux enregistrements il calculera la clé qui leur correspond et comparera ces clés. On comprend immédiatement que quel que soit l’algorithme de tri utilisé la clé de chaque élément sera calculée plusieurs fois ce qui risque de prendre beaucoup de temps. (Enormément de temps s’il y a un accès à un fichier, une base de donnée, une connection réseau etc.., à chaque fois).
+Chaque fois que l'algorithme de tri devra comparer deux enregistrements il calculera la clé qui leur correspond et comparera ces clés. On comprend immédiatement que quel que soit l’algorithme de tri utilisé la clé de chaque élément sera calculée plusieurs fois ce qui risque de prendre beaucoup de temps. (Enormément de temps s’il y a un accès à un fichier, une base de donnée, une connection réseau etc.., à chaque fois).
 
 # Solution classique
 Tout développeur sérieux envisagera immédiatement de mettre en cache le résultat de chaque computeKey($a) et de l’associer à $a. Dans bien des cas il n’est pas possible de modifier $a pour y inclure le résultat de computeKey($a). L’association doit être externe à $a. 
