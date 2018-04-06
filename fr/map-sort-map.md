@@ -2,6 +2,9 @@
 
 Des centaines de livres et des dizaines de milliers d’articles ont été écrit sur les algorithmes de tri. Ceci ne sera pas un article de plus sur ce sujet. Je voudrais juste parler de ce que certains appellent, avec un certain culte de la personne typique au monde Perl, « Schwartzian Transform ». Sous ce nom se cache une technique très simple : le cache.
 
+> Une legère variante de cette technique est nommée « [Guttman-Rosler Transform](./map-sort-map) ».
+Quand je vous le dit qu'il y a un culte de la personne...
+
 # Le problème
 On a une liste d’objets (de structures) que l’on veut trier. Mais l’information sur laquelle le critère de tri doit s’appliquer n’est pas explicite (il faut la calculer). Autrement dit ce n’est pas un entier ou une chaine de caractères deja présent dans les structures à trier.
 
